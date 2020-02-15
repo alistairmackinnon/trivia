@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.ttk import *
+import trivia
 
 window = Tk()
 window.title("Trivia App")
@@ -12,10 +13,18 @@ rad2 = Radiobutton(window, text='False', value="False", variable=selected)
 
 # Functions
 def clicked():
-    print(selected.get())
+    user_answer = selected.get()
+    if user_answer == answer:
+        print('Correct')
+    else:
+        print('Incorrect')
+
+question_tup = trivia.get_questions(1)
+question = question_tup[0]
+answer = question_tup[1]
 
 
-ques_txt = Label(window, wraplength=300, text="Question Question Question Question Question Question Question")
+ques_txt = Label(window, wraplength=300, text=question)
 ques_txt.grid(column=0, row=0, columnspan=2, padx=20, pady=20)
 
 # Submit Button
