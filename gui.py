@@ -12,23 +12,28 @@ rad2 = Radiobutton(window, text='False', value="False", variable=selected)
 
 
 # Functions
-def clicked():
+def validate_answer():
+    global submit_txt
     user_answer = selected.get()
     if user_answer == answer:
         print('Correct')
     else:
         print('Incorrect')
 
+
+# Set question context
 question_tup = trivia.get_questions(1)
 question = question_tup[0]
 answer = question_tup[1]
 
-
+# Set Gui
 ques_txt = Label(window, wraplength=300, text=question)
 ques_txt.grid(column=0, row=0, columnspan=2, padx=20, pady=20)
 
 # Submit Button
-btn = Button(window, text="Submit", command=clicked)
+submit_txt = StringVar()
+submit_txt = 'Submit'
+btn = Button(window, text=submit_txt, command=validate_answer)
 btn.grid(column=0, row=2)
 
 # Quit Button
