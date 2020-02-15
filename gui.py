@@ -4,11 +4,6 @@ import trivia
 
 window = Tk()
 window.title("Trivia App")
-# window.geometry('350x200')
-
-selected = StringVar()
-rad1 = Radiobutton(window, text='True', value="True", variable=selected)
-rad2 = Radiobutton(window, text='False', value="False", variable=selected)
 
 
 # Functions
@@ -30,6 +25,13 @@ answer = question_tup[1]
 ques_txt = Label(window, wraplength=300, text=question)
 ques_txt.grid(column=0, row=0, columnspan=2, padx=20, pady=20)
 
+# Radio Buttons
+selected = StringVar()
+rad1 = Radiobutton(window, text='True', value="True", variable=selected)
+rad2 = Radiobutton(window, text='False', value="False", variable=selected)
+rad1.grid(column=0, row=1)
+rad2.grid(column=1, row=1)
+
 # Submit Button
 submit_txt = StringVar()
 submit_txt = 'Submit'
@@ -40,9 +42,6 @@ btn.grid(column=0, row=2)
 quit_btn = Button(window, text="Quit", command=window.destroy)
 quit_btn.grid(column=1, row=2)
 
-# Radio Buttons
-rad1.grid(column=0, row=1)
-rad2.grid(column=1, row=1)
 
 # Launch Window
 window.mainloop()
