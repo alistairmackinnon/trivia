@@ -36,7 +36,6 @@ rad1.grid(column=0, row=1)
 rad2.grid(column=1, row=1)
 
 # Submit Button
-submit_txt = StringVar()
 submit_txt = 'Submit'
 btn = Button(frame, text=submit_txt, command=validate_answer)
 btn.grid(column=0, row=2)
@@ -44,7 +43,6 @@ btn.grid(column=0, row=2)
 # Quit Button
 quit_btn = Button(frame, text="Quit", command=window.destroy)
 quit_btn.grid(column=1, row=2)
-
 
 # Launch Window
 window.mainloop()
